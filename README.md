@@ -12,6 +12,28 @@ Distribution Debian 12 (Bookworm) personnalisée pour l'administration système 
 - **Clavier FR** : Configuration française automatique
 - **SSH sécurisé** : Port custom configurable + sshd_config auto-configuré
 
+## 📸 Screenshots
+
+### Boot Menu
+![Boot Menu](screenshots/boot-menu.png)
+
+### Installation
+![Installer](screenshots/installer-user.png)
+
+### Installation
+![Installer](screenshots/installer-password.png)
+
+### Installation
+![Installer](screenshots/installer-partition.png)
+
+### Installation
+![Installer](screenshots/installer-partition-disk.png)
+
+### Bureau XFCE avec Arc-Dark
+![Desktop](screenshots/desktop-sloth.png)
+
+
+
 
 ## 📦 Installation
 
