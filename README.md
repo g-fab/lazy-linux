@@ -1,6 +1,3 @@
-
-# 🐧 Lazy Linux
-
 # 🐧 Lazy Linux
 
 ![Debian](https://img.shields.io/badge/Debian-12_Bookworm-A81D33?logo=debian&logoColor=white)
