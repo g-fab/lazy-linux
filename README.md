@@ -10,6 +10,8 @@ Distribution Debian 12 (Bookworm) personnalisée pour l'administration système 
 - **Outils réseau** : Wireshark, nmap, tcpdump, iperf3, mtr
 - **Monitoring** : Glances, htop, lm-sensors
 - **Clavier FR** : Configuration française automatique
+- **SSH sécurisé** : Port custom configurable + sshd_config auto-configuré
+
 
 ## 📦 Installation
 
@@ -43,14 +45,22 @@ sudo lb config \\
 
 # Build (30-40 min)
 sudo lb build 2>&1 | tee ~/build.log
-\`\`\`
+```
 
 ## 🚀 Commandes utiles
 
-- \`update\` - Mise à jour système
-- \`ports\` - Voir les ports ouverts
-- \`lazy-setup\` - Configuration SSH/Firewall
-- \`lazy-audit\` - Audit de sécurité Lynis
+- `update` - Mise à jour système
+- `ports` - nVoir les ports ouverts
+- `lazy-setup` - Configuration SSH/Firewall
+- `lazy-audit` - Audit de sécurité Lynis
+
+## 🚀 Lazy Aliases
+- `c` = clear
+- `..` = cd ..
+- `...` = cd ../..
+- `snano` = sudo nano -l
+- `nano` = nano -l
+- `lla` = ls -la
 
 ## 📚 Documentation
 
