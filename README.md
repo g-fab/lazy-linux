@@ -17,7 +17,7 @@ Télécharge l'ISO et boot dessus. L'installateur Debian s'occupe du reste !
 
 ## 🔧 Build depuis les sources
 
-\`\`\`bash
+
 # Prérequis
 sudo apt update
 sudo apt install -y live-build git debootstrap
