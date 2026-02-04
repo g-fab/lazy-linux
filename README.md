@@ -64,8 +64,8 @@ sudo lb build 2>&1 | tee ~/build.log
 
 ## 📚 Documentation
 
-- [Guide de Build](docs/Build-Distro.html)
-- [Guide de Customisation](docs/Customize-Distro.html)
+- [Guide de Build](docs/Build-Distro.md)
+- [Guide de Customisation](docs/Customize-Distro.md)
 
 ## 📝 Licence
 
