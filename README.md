@@ -17,16 +17,16 @@ Distribution Debian 12 (Bookworm) personnalisée pour l'administration système 
 ### Boot Menu
 ![Boot Menu](screenshots/boot-menu.png)
 
-### Installation
+### Installation - Set User
 ![Installer](screenshots/installer-user.png)
 
-### Installation
+### Installation - Set Password
 ![Installer](screenshots/installer-password.png)
 
-### Installation
+### Installation - Choix du mode de partitionnement
 ![Installer](screenshots/installer-partition.png)
 
-### Installation
+### Installation - Choix du Disque
 ![Installer](screenshots/installer-partition-disk.png)
 
 ### Bureau XFCE avec Arc-Dark
