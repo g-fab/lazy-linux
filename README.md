@@ -16,7 +16,6 @@ Distribution Debian 12 (Bookworm) personnalisée pour l'administration système 
 Télécharge l'ISO et boot dessus. L'installateur Debian s'occupe du reste !
 
 ## 🔧 Build depuis les sources
-
 \`\`\`bash
 # Prérequis
 sudo apt update
