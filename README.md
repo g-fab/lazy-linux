@@ -81,7 +81,7 @@ sudo lb build 2>&1 | tee ~/build.log
 ## 🚀 Commandes utiles
 
 - `update` - Mise à jour système
-- `ports` - nVoir les ports ouverts
+- `ports` - Voir les ports ouverts
 - `lazy-setup` - Configuration SSH/Firewall
 - `lazy-audit` - Audit de sécurité Lynis
 
