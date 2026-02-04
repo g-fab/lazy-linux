@@ -1,4 +1,16 @@
+
 # 🐧 Lazy Linux
+
+# 🐧 Lazy Linux
+
+![Debian](https://img.shields.io/badge/Debian-12_Bookworm-A81D33?logo=debian&logoColor=white)
+![Desktop](https://img.shields.io/badge/Desktop-XFCE-2284F2?logo=xfce&logoColor=white)
+![Shell](https://img.shields.io/badge/Shell-Zsh-1A2C34?logo=zsh&logoColor=white)
+![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)
+![Release](https://img.shields.io/github/v/release/g-fab/lazy-linux?label=Version)
+![Downloads](https://img.shields.io/github/downloads/g-fab/lazy-linux/total?label=Downloads)
+
+
 
 Distribution Debian 12 (Bookworm) personnalisée pour l'administration système et la sécurité réseau.
 
