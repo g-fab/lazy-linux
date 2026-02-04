@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Installer Lynis
+apt-get install -y lynis
+
+# Créer un script pour l'audit de sécurité
+cat > /usr/local/bin/lazy-audit <<'EOF'
+#!/bin/bash
+
+echo "========================================="
+echo "  Audit de sécurité Lazy Linux"
+echo "========================================="
+echo ""
+echo "Lynis va analyser votre système et proposer"
+echo "des recommandations de sécurité."
+echo ""
+read -p "Lancer l'audit maintenant ? (o/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Oo]$ ]]; then
+    sudo lynis audit system
+    echo ""
+    echo "Rapport complet : /var/log/lynis.log"
+    echo "Recommandations : /var/log/lynis-report.dat"
+fi
+EOF
+
+chmod +x /usr/local/bin/lazy-audit

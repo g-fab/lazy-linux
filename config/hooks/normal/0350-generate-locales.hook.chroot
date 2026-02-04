@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# S'assurer que locales est installé
+apt-get install -y locales
+
+# Configurer les locales françaises
+echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+
+# Générer les locales (chemin complet)
+/usr/sbin/locale-gen
+
+# Définir la locale par défaut
+update-locale LANG=fr_FR.UTF-8
+echo 'LANG=fr_FR.UTF-8' > /etc/default/locale
+echo 'LC_ALL=fr_FR.UTF-8' >> /etc/default/locale
+
+echo "Locales générées et configurées"

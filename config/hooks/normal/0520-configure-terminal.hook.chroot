@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Créer le répertoire de config terminal dans /etc/skel
+mkdir -p /etc/skel/.config/xfce4/terminal
+
+# Créer la configuration du terminal avec zsh
+cat > /etc/skel/.config/xfce4/terminal/terminalrc << 'TERMEOF'
+[Configuration]
+CommandLoginShell=TRUE
+FontName=FiraCode 11
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBellUrgent=FALSE
+MiscBordersDefault=TRUE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=80x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=FALSE
+MiscMouseAutohide=FALSE
+MiscMouseWheelZoom=TRUE
+MiscToolbarDefault=FALSE
+MiscConfirmClose=TRUE
+MiscCycleTabs=TRUE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscHighlightUrls=TRUE
+MiscMiddleClickOpensUri=FALSE
+MiscCopyOnSelect=FALSE
+MiscShowRelaunchDialog=TRUE
+MiscRewrapOnResize=TRUE
+MiscUseShiftArrowsToScroll=FALSE
+MiscSlimTabs=FALSE
+MiscNewTabAdjacent=FALSE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+BackgroundDarkness=0.90
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+CustomCommand=/bin/zsh
+TERMEOF
+
+chmod 644 /etc/skel/.config/xfce4/terminal/terminalrc

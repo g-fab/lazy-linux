@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Configuration XFCE Lazy Linux
+Exec=sh -c 'fix-xfce.sh && rm ~/.config/autostart/fix-xfce-once.desktop'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

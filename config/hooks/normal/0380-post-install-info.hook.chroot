@@ -1,0 +1,21 @@
+#!/bin/sh
+# Ajouter des informations post-installation
+
+cat >> /etc/profile.d/lazy-postinstall.sh << 'EOF'
+# Vérifier si l'utilisateur doit configurer certains outils
+
+if [ -f ~/.lazy-first-run ]; then
+    return
+fi
+
+# Créer le marqueur pour ne pas afficher à chaque fois
+touch ~/.lazy-first-run
+
+echo ""
+echo "📋 Configuration post-installation recommandée:"
+echo "   • Wireshark: sudo usermod -aG wireshark \$USER && newgrp wireshark"
+echo "   • Sensors:   sensors-setup (alias pour sensors-detect --auto)"
+echo ""
+EOF
+
+chmod +x /etc/profile.d/lazy-postinstall.sh

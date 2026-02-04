@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Installation automatique de Oh My Zsh et Powerlevel10k
+
+# Installer Oh My Zsh pour tous les utilisateurs
+export ZSH=/usr/share/oh-my-zsh
+
+# Vérifier si git est installé
+if command -v git >/dev/null 2>&1; then
+    # Cloner Oh My Zsh
+    if [ ! -d "$ZSH" ]; then
+        git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $ZSH || true
+    fi
+    
+    # Installer Powerlevel10k
+    if [ ! -d "$ZSH/custom/themes/powerlevel10k" ]; then
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k || true
+    fi
+fi
+
+# Configuration par défaut pour nouveaux utilisateurs
+cat > /etc/skel/.zshrc << 'EOF'
+# Path to oh-my-zsh
+export ZSH=/usr/share/oh-my-zsh
+
+# Theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Plugins
+plugins=(git sudo)
+
+# Source Oh My Zsh si disponible
+if [ -f $ZSH/oh-my-zsh.sh ]; then
+    source $ZSH/oh-my-zsh.sh
+fi
+
+# Aliases Lazy Linux
+alias update='sudo apt update && sudo apt upgrade -y'
+alias ll='ls -lah --color=auto'
+alias lla='ls -la --color=auto'
+alias ports='sudo netstat -tulanp'
+alias snano='sudo nano'
+alias c='clear'
+alias lazy-audit='sudo lynis audit system'
+EOF
+
+# Configurer zsh comme shell par défaut pour les nouveaux utilisateurs
+# Modifie /etc/adduser.conf pour que les nouveaux users aient zsh par défaut
+sed -i 's|^DSHELL=.*|DSHELL=/bin/zsh|' /etc/adduser.conf || echo "DSHELL=/bin/zsh" >> /etc/adduser.conf

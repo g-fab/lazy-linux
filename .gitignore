@@ -1,0 +1,24 @@
+# Build artifacts
+*.iso
+*.img
+*.hybrid.iso
+*.contents
+*.files
+*.packages
+*.zsync
+build.log
+*.log
+
+# Live-build directories
+.build/
+binary/
+cache/
+chroot/
+local/
+wget-log*
+
+# Fichiers temporaires
+*~
+*.swp
+*.swo
+.DS_Store

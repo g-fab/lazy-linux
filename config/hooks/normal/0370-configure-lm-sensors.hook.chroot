@@ -1,0 +1,12 @@
+#!/bin/sh
+# Configuration automatique de lm-sensors
+
+# Créer un fichier de configuration par défaut
+# sensors-detect sera lancé par l'utilisateur si besoin
+
+# Ajouter un alias pour faciliter la configuration
+cat >> /etc/skel/.bashrc << 'EOF'
+
+# Alias pour configurer les capteurs de température
+alias sensors-setup='sudo sensors-detect --auto'
+EOF

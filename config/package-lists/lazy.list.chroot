@@ -1,0 +1,81 @@
+
+# Certificats SSL (REQUIS pour dépôts HTTPS)
+ca-certificates
+
+# Essentiels système
+openssh-server
+curl
+wget
+ufw
+fail2ban
+htop
+nano
+vim
+net-tools
+unattended-upgrades
+sudo
+#docker-ce
+#docker-ce-cli
+#containerd.io
+#docker-buildx-plugin
+#docker-compose-plugin
+
+
+# Gestion d'énergie et polkit (IMPORTANT pour shutdown/reboot)
+policykit-1
+libpam-systemd
+systemd
+dbus
+
+
+# Sécurité
+apparmor
+apparmor-utils
+
+# Environnement minimal (si tu veux un bureau léger)
+xfce4
+lightdm
+
+# Locales
+locales
+
+# Serveur X (requis pour l'interface graphique)
+xorg
+xserver-xorg
+
+# Audit de sécurité
+lynis
+
+
+# Monitoring et diagnostic système
+glances
+smartmontools
+lm-sensors
+
+# Outils réseau
+nmap
+tcpdump
+wireshark
+iperf3
+mtr-tiny
+
+# Backup et synchronisation
+rsync
+rclone
+
+# Terminaux alternatifs (optionnel - pour tester)
+terminator
+
+
+# Thèmes et icônes modernes
+arc-theme
+papirus-icon-theme
+fonts-firacode
+plank
+
+# Shell moderne
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
+fonts-powerline
+git

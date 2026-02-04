@@ -1,0 +1,14 @@
+#!/bin/sh
+# Configuration automatique de Wireshark pour utilisation non-root
+
+# Ajouter le groupe wireshark si nécessaire
+groupadd -f wireshark
+
+# Permettre aux membres du groupe wireshark de capturer les paquets
+echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
+
+# Reconfigurer wireshark
+DEBIAN_FRONTEND=noninteractive dpkg-reconfigure wireshark-common
+
+# Note: L'utilisateur devra être ajouté au groupe wireshark après installation
+# avec: sudo usermod -aG wireshark $USER

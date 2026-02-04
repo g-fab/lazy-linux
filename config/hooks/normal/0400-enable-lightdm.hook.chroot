@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Vérifier si LightDM est installé
+if dpkg -l | grep -q lightdm; then
+    # S'assurer que les locales sont générées (chemin complet)
+    /usr/sbin/locale-gen fr_FR.UTF-8 2>/dev/null || true
+    
+    # Activer LightDM au démarrage
+    systemctl enable lightdm
+    
+    # Définir le target graphique par défaut
+    systemctl set-default graphical.target
+    
+    echo "LightDM configuré et activé"
+else
+    echo "LightDM n'est pas installé, skip"
+fi

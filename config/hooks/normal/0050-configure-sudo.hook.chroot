@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Installer sudo si pas déjà présent
+apt-get install -y sudo
+
+# Configurer sudoers pour ne pas demander le mot de passe trop souvent
+if [ ! -f /etc/sudoers.d/lazy-config ]; then
+    echo "Defaults timestamp_timeout=15" > /etc/sudoers.d/lazy-config
+    chmod 440 /etc/sudoers.d/lazy-config
+fi
+
+# S'assurer que le groupe sudo est bien configuré
+grep -q "^%sudo" /etc/sudoers || echo "%sudo ALL=(ALL:ALL) ALL" >> /etc/sudoers

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Supprimer les packages inutiles
+apt-get purge -y \
+    libreoffice* \
+    gnome-games* \
+    aisleriot \
+    gnome-mahjongg \
+    gnome-mines \
+    gnome-sudoku \
+    quadrapassel \
+    gnome-calculator 2>/dev/null || true
+
+# Nettoyer
+apt-get autoremove -y
+apt-get clean

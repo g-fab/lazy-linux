@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# Message d'accueil ASCII (affiché à chaque connexion)
+cat > /etc/profile.d/lazy-welcome.sh <<'EOF'
+#!/bin/bash
+
+# Afficher seulement dans les shells interactifs
+if [[ $- == *i* ]]; then
+    cat << 'WELCOME'
+
+   _                    _     _                 
+  | |    __ _ _____   _| |   (_)_ __  _   ___  __
+  | |   / _` |_  / | | | |   | | '_ \| | | \ \/ /
+  | |__| (_| |/ /| |_| | |___| | | | | |_| |>  < 
+  |_____\__,_/___|\__, |_____|_|_| |_|\__,_/_/\_\
+                  |___/                          
+
+📋 Configuration post-installation recommandée:
+   • Wireshark: sudo usermod -aG wireshark $USER && newgrp wireshark
+   • Sensors:   sensors-setup (alias pour sensors-detect --auto)
+
+🔧 Commandes utiles :
+   • sudo lazy-setup  → Configuration système (SSH, firewall)
+   • update           → Mise à jour système
+   • ll / lla         → Listage détaillé
+   • ports            → Voir les ports ouverts
+   • snano            → Nano en sudo
+   • c                → Clear Terminal
+   • lazy-audit       → Auditer la sécurité du système avec Lynis
+
+🛠️  Outils disponibles :
+   Monitoring: htop, glances
+   Réseau: nmap, tcpdump, wireshark, iperf3, mtr
+   Système: smartmontools, lm-sensors
+   Backup: rsync, rclone
+   Sécurité: ufw, fail2ban, apparmor, lynis
+
+WELCOME
+
+fi
+EOF
+
+chmod +x /etc/profile.d/lazy-welcome.sh
+
+# Script lazy-setup
+cat > /usr/local/bin/lazy-setup <<'EOF'
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]; then
+    echo "Veuillez exécuter en tant que root (sudo)"
+    exit 1
+fi
+
+echo "=== Configuration Lazy Linux ==="
+echo ""
+
+# Changer le port SSH
+read -p "Nouveau port SSH (22 par défaut) : " SSH_PORT
+SSH_PORT=${SSH_PORT:-22}
+
+sed -i "s/^#\?Port .*/Port $SSH_PORT/" /etc/ssh/sshd_config
+echo "✓ Port SSH configuré : $SSH_PORT"
+
+# Ajouter règle firewall
+ufw allow $SSH_PORT/tcp
+echo "✓ Règle firewall ajoutée"
+
+# Redémarrer SSH
+systemctl restart sshd
+echo "✓ Service SSH redémarré"
+
+echo ""
+echo "Configuration terminée !"
+echo "N'oubliez pas d'activer ufw : sudo ufw enable"
+EOF
+
+chmod +x /usr/local/bin/lazy-setup
