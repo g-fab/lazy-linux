@@ -1,0 +1,21 @@
+#!/bin/bash
+# Configure Firefox ESR comme navigateur par défaut
+
+set -e
+
+echo "I: Configuration de Firefox ESR comme navigateur par défaut"
+
+# Définir Firefox comme navigateur système par défaut
+if [ -f /usr/bin/firefox-esr ]; then
+    update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/firefox-esr 100
+    update-alternatives --set x-www-browser /usr/bin/firefox-esr
+    
+    update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/firefox-esr 100
+    update-alternatives --set gnome-www-browser /usr/bin/firefox-esr
+    
+    echo "I: Firefox ESR configuré avec succès"
+else
+    echo "W: Firefox ESR non trouvé, ignoré"
+fi
+
+exit 0

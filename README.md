@@ -16,7 +16,7 @@ Distribution Debian 12 (Bookworm) personnalisée pour l'administration système 
 - **Interface moderne** : XFCE avec thème Arc-Dark et icônes Papirus
 - **Terminal Zsh** : Oh My Zsh + Powerlevel10k préconfiguré
 - **Sécurité renforcée** : UFW, Fail2ban, AppArmor, Lynis
-- **Outils réseau** : Wireshark, nmap, tcpdump, iperf3, mtr
+- **Outils réseau** : Firefox ESR, Wireshark, nmap, tcpdump, iperf3, mtr
 - **Monitoring** : Glances, htop, lm-sensors
 - **Clavier FR** : Configuration française automatique
 - **SSH sécurisé** : Port custom configurable + sshd_config auto-configuré

@@ -36,6 +36,10 @@ apparmor-utils
 xfce4
 lightdm
 
+# Navigateur web
+firefox-esr
+firefox-esr-l10n-fr
+
 # Locales
 locales
 
