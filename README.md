@@ -98,6 +98,20 @@ sudo lb build 2>&1 | tee ~/build.log
 - [Guide de Build](docs/Build-Distro.md)
 - [Guide de Customisation](docs/Customize-Distro.md)
 
+
+## Kernel
+
+Cette release a été rebuild avec le kernel Debian `6.1.0-49-amd64`.
+
+### Pourquoi
+- Correction de CopyFail.
+- Correction de Dirty Frag.
+- Mise à jour de sécurité pour l’image ISO publiée.
+
+### Notes
+- L’ISO publiée contient déjà ce kernel.
+- Le dépôt décrit la version utilisée pour ce build.
+
 ## 📝 Licence
 
 GPL-3.0
