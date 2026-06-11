@@ -19,7 +19,8 @@ sudo
 #containerd.io
 #docker-buildx-plugin
 #docker-compose-plugin
-
+linux-image-6.1.0-49-amd64
+linux-headers-6.1.0-49-amd64
 
 # Gestion d'énergie et polkit (IMPORTANT pour shutdown/reboot)
 policykit-1
